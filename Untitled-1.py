@@ -3,6 +3,7 @@
 #hello
 #i am in - omar
 #i'm in - calvin
+#Wassup mga beta-males - Sam edgys
 from tkinter import *
 import sys
 import time
