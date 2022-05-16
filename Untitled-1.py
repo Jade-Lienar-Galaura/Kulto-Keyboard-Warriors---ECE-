@@ -51,7 +51,7 @@ class stopwatch():
             self.t.set(self.d)
             if(count==0):
                 self.root.after(1000,self.timer)
-                
+#prog for the lap                
     def lap(self):
         h,m,s = map(int,self.d.split(":"))
         h = str(h).zfill(2)
