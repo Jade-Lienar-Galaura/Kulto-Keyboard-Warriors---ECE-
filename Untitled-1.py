@@ -74,23 +74,24 @@ class stopwatch():
             self.x = filedialog.askopenfilename()
             self.bg = PhotoImage(file=self.x)
             self.back = Label(self.root, image=self.bg)
-            self.back.place(x=0, y=0, relwidth=1, relheight=1)
+            self.back.place(x=0, y=0, relwidth=1, relheight=1, anchor="nw")
 
-
-
+    
     def __init__(self):
         self.root=Tk()
         self.root.title("Stop Watch")
         self.root.geometry("680x300")
         self.t = StringVar()
         self.t.set("00:00:00")
+        self.bg = self.image_path
         self.lb = Label(self.root,textvariable=self.t,font=("Times 40 bold"),bg="white")
         self.bt1 = Button(self.root,text="Start",command=self.start,font=("Times 12 bold"),bg=("green"))
         self.bt2 = Button(self.root,text="Stop",command=self.stop,font=("Times 12 bold"),bg=("red"))
         self.bt3 = Button(self.root,text="Reset",command=self.reset,font=("Times 12 bold"),bg=("orange"))
         self.bt4 = Button(self.root, text="Exit", command=self.close,font=("Times 12 bold"),bg=("yellow"))
         self.bt5 = Button(self.root, text="Lap", command=self.lap,font=("Times 12 bold"),bg=("blue"))
-        self.bt6 = Button(self.root, text="Change background", command=self.image_path, font=("Times 12 bold"), bg=("pink"))
+        self.bt6 = Button(self.root, text="Change background", command=self.bg, font=("Times 12 bold"), bg=("pink"))
+
         self.lb.place(x=240,y=10)
         self.bt1.place(x=120,y=100)
         self.bt2.place(x=220,y=100)
@@ -98,8 +99,9 @@ class stopwatch():
         self.bt4.place(x=520,y=100)
         self.bt5.place(x=420,y=100)
         self.bt6.place(x=620, y=100)
+
         self.label = Label(self.root,text="",font=("Times 40 bold"))
-        self.root.configure(bg='black')
+        
         self.root.mainloop()
 
 
