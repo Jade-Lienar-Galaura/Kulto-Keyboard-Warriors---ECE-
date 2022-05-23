@@ -12,7 +12,7 @@ from tkinter import filedialog
 
 count = 0
 
-
+#Codes in creating functions (start, stop, close, timer and lap)
 class stopwatch():
     def reset(self):
         global count
@@ -85,7 +85,7 @@ class stopwatch():
         self.back = Label(root, image=bg)
         self.back.pack(padx=0, pady=0)
 
-
+#Codes in creating the body of the stopwatch
     def __init__(self):
         self.root = Tk()
         self.canvas = Canvas(self.root, width=680, height=300)
