@@ -9,6 +9,7 @@ import sys
 import time
 global count
 from tkinter import filedialog
+from PIL import ImageTk, Image
 
 count = 0
 
@@ -79,21 +80,22 @@ class stopwatch():
 
     def image_path(self):
         photoloc = filedialog.askopenfilename()
-        bg = PhotoImage(file=photoloc)
+        bg = ImageTk.PhotoImage(file=photoloc)
         self.canvas.create_image(0, 0, image=bg)
         self.canvas.pack(fill="both", expand=True)
         self.back = Label(root, image=bg)
         self.back.pack(padx=0, pady=0)
 
+
 #Codes in creating the body of the stopwatch
     def __init__(self):
         self.root = Tk()
-        self.canvas = Canvas(self.root, width=680, height=300)
+        self.canvas = Canvas(self.root, width=1920, height=1080)
         self.canvas.pack(fill="both", expand=True)
         self.root.title("Stop Watch")
-        self.root.geometry("680x300")
-        self.root.minsize(680,300)
-        self.root.maxsize(680,300)
+        self.root.geometry("1920x1080")
+        self.root.minsize(1920,1080)
+        self.root.maxsize(1920,1080)
         self.t = StringVar()
         self.t.set("00:00:00")
         self.lb = Label(self.root, textvariable=self.t, font=("Times 40 bold"), bg="white")
@@ -104,6 +106,7 @@ class stopwatch():
         self.bt5 = Button(self.root, text="Lap", command=self.lap, font=("Times 12 bold"), bg=("blue"))
         self.bt6 = Button(self.root, text="Change background", command=self.image_path, font=("Times 12 bold"),
                           bg=("pink"))
+                    
 
         button1_window = self.canvas.create_window(10, 150, anchor="nw", window=self.bt1)
         button2_window = self.canvas.create_window(110, 150, anchor="nw", window=self.bt2)
