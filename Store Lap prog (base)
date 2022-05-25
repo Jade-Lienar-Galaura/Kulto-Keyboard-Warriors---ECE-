@@ -18,13 +18,6 @@ class StopWatch(Frame):
         self.today = time.strftime("%d %b %Y %H-%M-%S", time.localtime())
         
     def makeWidgets(self):                         
-        """ Make the time label. """
-        l1 = Label(self, text='----File Name----')
-        l1.pack(fill=X, expand=NO, pady=1, padx=2)
-
-        self.e = Entry(self)
-        self.e.pack(pady=2, padx=2)
-        
         l = Label(self, textvariable=self.timestr)
         self._setTime(self._elapsedtime)
         l.pack(fill=X, expand=NO, pady=3, padx=2)
@@ -106,7 +99,7 @@ def main():
     Button(root, text='Lap', command=sw.Lap).pack(side=LEFT)
     Button(root, text='Start', command=sw.Start).pack(side=LEFT)
     Button(root, text='Stop', command=sw.Stop).pack(side=LEFT)
-    #Button(root, text='Reset', command=sw.Reset).pack(side=LEFT)
+    Button(root, text='Reset', command=sw.Reset).pack(side=LEFT)
     Button(root, text='Save', command=sw.GravaCSV).pack(side=LEFT)
     Button(root, text='Quit', command=root.quit).pack(side=LEFT)    
     
