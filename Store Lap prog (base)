@@ -1,5 +1,8 @@
 from tkinter import *
+import sys
 import time
+global count
+from tkinter import filedialog
 
 class StopWatch(Frame):  
     """ Implements a stop watch frame widget. """                                                                
@@ -83,25 +86,32 @@ class StopWatch(Frame):
             self.m.yview_moveto(1)
             self.lapmod2 = self._elapsedtime
        
-    def GravaCSV(self):
-        '''Pega nome do cronometro e cria arquivo para guardar as laps'''
+    def Save(self):
+        '''Paste the name of the timer and create a file to save the laps'''
         arquivo = str(self.e.get()) + ' - '
         with open(arquivo + self.today + '.txt', 'wb') as lapfile:
             for lap in self.laps:
                 lapfile.write((bytes(str(lap) + '\n', 'utf-8')))
-            
+
+    def BG(self):
+        self.open = filedialog.askopenfilename()
+        self.bg = PhotoImage(file=self.open)
+        self.back = Label(self.root, image=self.bg)
+        self.back.place(x=0, y=0, relwidth=1, relheight=1)
+
 def main():
     root = Tk()
     root.wm_attributes("-topmost", 1)      #always on top - might do a button for it
     sw = StopWatch(root)
     sw.pack(side=TOP)
 
-    Button(root, text='Lap', command=sw.Lap).pack(side=LEFT)
     Button(root, text='Start', command=sw.Start).pack(side=LEFT)
+    Button(root, text='Lap', command=sw.Lap).pack(side=LEFT)
     Button(root, text='Stop', command=sw.Stop).pack(side=LEFT)
     Button(root, text='Reset', command=sw.Reset).pack(side=LEFT)
-    Button(root, text='Save', command=sw.GravaCSV).pack(side=LEFT)
-    Button(root, text='Quit', command=root.quit).pack(side=LEFT)    
+    Button(root, text='Save', command=sw.Save).pack(side=LEFT)
+    Button(root, text='Quit', command=root.quit).pack(side=LEFT)
+    Button(root, text='Set Background', command=sw.BG).pack(side=LEFT)    
     
     root.mainloop()
 
