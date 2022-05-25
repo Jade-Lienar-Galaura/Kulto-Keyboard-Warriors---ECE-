@@ -83,7 +83,7 @@ class StopWatch(Frame):
 
     def Lap(self):
         '''Makes a lap, only if started'''
-        tempo = self._elapsedtime - self.lapmod2
+        tempo = self._elapsedtime
         if self._running:
             self.laps.append(self._setLapTime(tempo))
             self.m.insert(END, self.laps[-1])
