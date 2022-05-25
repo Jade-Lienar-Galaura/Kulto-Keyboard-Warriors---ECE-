@@ -19,8 +19,21 @@ class StopWatch(Frame):
         self.laps = []
         self.lapmod2 = 0
         self.today = time.strftime("%d %b %Y %H-%M-%S", time.localtime())
-        
-    def makeWidgets(self):                         
+
+    def makeWidgets(self):
+        win = self.makeWidgets()
+        win.geometry("700x250")
+        def change_color():
+            colors= ['#e9c46a','#e76f51','#264653','#2a9d8f','#e85d04','#a2d2ff','#06d6a0','#4d908e']
+            while True:
+                shuffle(colors)
+                for i in range(0,len(colors)):
+                    win.config(background=colors[i])
+                    win.update()
+                    time.sleep(1)
+
+
+
         l = Label(self, textvariable=self.timestr)
         self._setTime(self._elapsedtime)
         l.pack(fill=X, expand=NO, pady=3, padx=2)
@@ -34,6 +47,7 @@ class StopWatch(Frame):
         self.m.pack(side=LEFT, fill=BOTH, expand=1, pady=5, padx=2)
         scrollbar.config(command=self.m.yview)
         scrollbar.pack(side=RIGHT, fill=Y)
+        
    
     def _update(self): 
         """ Update the label with elapsed time. """
