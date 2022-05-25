@@ -81,7 +81,7 @@ class stopwatch():
     def image_path(self):
         photoloc = filedialog.askopenfilename()
         img = Image.open(photoloc)
-        resize =img.resize((1920, 1080), Image.ANTIALIAS)
+        resize =img.resize((1280, 720), Image.ANTIALIAS)
         bg = ImageTk.PhotoImage(resize)
         self.canvas.create_image(0, 0, image=bg, anchor="nw")
         self.back = Label(root, image=bg)
