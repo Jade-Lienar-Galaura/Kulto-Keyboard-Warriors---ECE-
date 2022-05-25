@@ -22,12 +22,12 @@ class stopwatch():
 
     def start(self):
         global count
-        count = 1
+        count = 0
         self.timer()
 
     def stop(self):
         global count
-        count = 0
+        count = 1
 
     def close(self):
         self.root.destroy()
