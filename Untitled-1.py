@@ -3,17 +3,17 @@
 # hello
 # i am in - omar
 # i'm in - calvin
-# Wassup mga beta-males - Sam edgys
+# Wassup mga idols - Sam edgys
+import imp
 from tkinter import *
 import sys
 import time
 global count
 from tkinter import filedialog
 from PIL import ImageTk, Image
-
 count = 0
 
-#Codes in creating functions (start, stop, close, timer and lap)
+
 class stopwatch():
     def reset(self):
         global count
@@ -80,17 +80,17 @@ class stopwatch():
 
     def image_path(self):
         photoloc = filedialog.askopenfilename()
-        bg = ImageTk.PhotoImage(file=photoloc)
-        self.canvas.create_image(0, 0, image=bg)
-        self.canvas.pack(fill="both", expand=True)
+        img = Image.open(photoloc)
+        resize =img.resize((1920, 1080), Image.ANTIALIAS)
+        bg = ImageTk.PhotoImage(resize)
+        self.canvas.create_image(0, 0, image=bg, anchor="nw")
         self.back = Label(root, image=bg)
         self.back.pack(padx=0, pady=0)
 
 
-#Codes in creating the body of the stopwatch
     def __init__(self):
         self.root = Tk()
-        self.canvas = Canvas(self.root, width=1920, height=1080)
+        self.canvas = Canvas(self.root, width=680, height=300)
         self.canvas.pack(fill="both", expand=True)
         self.root.title("Stop Watch")
         self.root.geometry("1920x1080")
@@ -106,15 +106,14 @@ class stopwatch():
         self.bt5 = Button(self.root, text="Lap", command=self.lap, font=("Times 12 bold"), bg=("blue"))
         self.bt6 = Button(self.root, text="Change background", command=self.image_path, font=("Times 12 bold"),
                           bg=("pink"))
-                    
 
-        button1_window = self.canvas.create_window(10, 150, anchor="nw", window=self.bt1)
-        button2_window = self.canvas.create_window(110, 150, anchor="nw", window=self.bt2)
-        button3_window = self.canvas.create_window(210, 150, anchor="nw", window=self.bt3)
-        button4_window = self.canvas.create_window(310, 150, anchor="nw", window=self.bt4)
-        button5_window = self.canvas.create_window(410, 150, anchor="nw", window=self.bt5)
-        button6_window = self.canvas.create_window(510, 150, anchor="nw", window=self.bt6)
-        buttonlb_window = self.canvas.create_window(340, 20, window=self.lb)
+        button1_window = self.canvas.create_window(630, 150, anchor="nw", window=self.bt1)
+        button2_window = self.canvas.create_window(730, 150, anchor="nw", window=self.bt2)
+        button3_window = self.canvas.create_window(830, 150, anchor="nw", window=self.bt3)
+        button4_window = self.canvas.create_window(930, 150, anchor="nw", window=self.bt4)
+        button5_window = self.canvas.create_window(1030, 150, anchor="nw", window=self.bt5)
+        button6_window = self.canvas.create_window(1130, 150, anchor="nw", window=self.bt6)
+        buttonlb_window = self.canvas.create_window(960, 20, window=self.lb)
 
         self.label = Label(self.root, text="", font=("Times 40 bold"))
 
