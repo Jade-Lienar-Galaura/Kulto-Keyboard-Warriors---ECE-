@@ -98,13 +98,13 @@ class stopwatch():
         self.root.maxsize(1280, 720)
         self.t = StringVar()
         self.t.set("00:00:00")
-        self.lb = Label(self.root, textvariable=self.t, font=("Times 40 bold"), bg="white")
-        self.bt1 = Button(self.root, text="Start", command=self.start, font=("Times 12 bold"), bg=("green"))
-        self.bt2 = Button(self.root, text="Stop", command=self.stop, font=("Times 12 bold"), bg=("red"))
-        self.bt3 = Button(self.root, text="Reset", command=self.reset, font=("Times 12 bold"), bg=("orange"))
-        self.bt4 = Button(self.root, text="Exit", command=self.close, font=("Times 12 bold"), bg=("yellow"))
-        self.bt5 = Button(self.root, text="Lap", command=self.lap, font=("Times 12 bold"), bg=("blue"))
-        self.bt6 = Button(self.root, text="Change background", command=self.image_path, font=("Times 12 bold"),
+        self.lb = Label(self.root, textvariable=self.t, font=("Times" , 40 , "bold"), bg="white")
+        self.bt1 = Button(self.root, text="Start", command=self.start, font=("Times" , 12 , "bold"), bg=("green"))
+        self.bt2 = Button(self.root, text="Stop", command=self.stop, font=("Times" , 12 , "bold"), bg=("red"))
+        self.bt3 = Button(self.root, text="Reset", command=self.reset, font=("Times" , 12 , "bold"), bg=("orange"))
+        self.bt4 = Button(self.root, text="Exit", command=self.close, font=("Times" , 12 , "bold"), bg=("yellow"))
+        self.bt5 = Button(self.root, text="Lap", command=self.lap, font=("Times" , 12 , "bold"), bg=("blue"))
+        self.bt6 = Button(self.root, text="Change background", command=self.image_path, font=("Times", 12 , "bold"),
                           bg=("pink"))
 
         button1_window = self.canvas.create_window(630, 150, anchor="nw", window=self.bt1)
@@ -120,6 +120,7 @@ class stopwatch():
                          yscrollcommand=self.scrollbar.set)
         self.scrollbar.config(command=self.lapbox.yview)
         #self.scrollbar.pack(side=RIGHT, fill=Y)
+        
         button1_window = self.canvas.create_window(310, 250, anchor="nw", window=self.bt1)
         button2_window = self.canvas.create_window(410, 250, anchor="nw", window=self.bt2)
         button3_window = self.canvas.create_window(510, 250, anchor="nw", window=self.bt3)
