@@ -72,11 +72,11 @@ class stopwatch():
         m = str(m).zfill(2)
         s = str(s).zfill(2)
         lp = (f"{h}:{m}:{s}")
-
         self.lbl = StringVar()
         self.lbl.set(f"{lp}")
-        self.bl = Label(self.root, textvariable=self.lbl, font=("Times 20 bold"), bg="white")
-        self.bl.place(x=300, y=250)
+        self.lapbox.insert(END, (f"{h}:{m}:{s}"))
+        self.lapbox.yview_moveto(1)
+
 
     def image_path(self):
         photoloc = filedialog.askopenfilename()
@@ -93,9 +93,9 @@ class stopwatch():
         self.canvas = Canvas(self.root, width=680, height=300)
         self.canvas.pack(fill="both", expand=True)
         self.root.title("Stop Watch")
-        self.root.geometry("1600x900")
-        self.root.minsize(1600,900)
-        self.root.maxsize(1600,900)
+        self.root.geometry("1280x720")
+        self.root.minsize(1280, 720)
+        self.root.maxsize(1280, 720)
         self.t = StringVar()
         self.t.set("00:00:00")
         self.lb = Label(self.root, textvariable=self.t, font=("Times 40 bold"), bg="white")
@@ -115,7 +115,22 @@ class stopwatch():
         button6_window = self.canvas.create_window(1130, 150, anchor="nw", window=self.bt6)
         buttonlb_window = self.canvas.create_window(960, 20, window=self.lb)
 
+        self.scrollbar = Scrollbar(self.root, orient=VERTICAL)
+        self.lapbox = Listbox(self.root,selectmode=EXTENDED, height = 5,
+                         yscrollcommand=self.scrollbar.set)
+        self.scrollbar.config(command=self.lapbox.yview)
+        #self.scrollbar.pack(side=RIGHT, fill=Y)
+        button1_window = self.canvas.create_window(310, 250, anchor="nw", window=self.bt1)
+        button2_window = self.canvas.create_window(410, 250, anchor="nw", window=self.bt2)
+        button3_window = self.canvas.create_window(510, 250, anchor="nw", window=self.bt3)
+        button4_window = self.canvas.create_window(610, 250, anchor="nw", window=self.bt4)
+        button5_window = self.canvas.create_window(710, 250, anchor="nw", window=self.bt5)
+        button6_window = self.canvas.create_window(810, 250, anchor="nw", window=self.bt6)
+        buttonlb_window = self.canvas.create_window(640, 20, window=self.lb)
+        lapbox_window = self.canvas.create_window(640, 120, window=self.lapbox)
         self.label = Label(self.root, text="", font=("Times 40 bold"))
+
+        #self.label = Label(self.root, text="", font=("Times 40 bold"))
 
         self.root.mainloop()
 
