@@ -17,6 +17,13 @@ class stopwatch():
 
 #CLYDE - HALF SA TIMER / LAP'
 
-#SAM THE GREATEST SEXY MAN - FUNCTION FOR CUSTOM BG / WINDOWS FOR BUTTONS
+def image_path(self):
+        photoloc = filedialog.askopenfilename()
+        img = Image.open(photoloc)
+        resize =img.resize((1280, 720), Image.ANTIALIAS)
+        bg = ImageTk.PhotoImage(resize)
+        self.canvas.create_image(0, 0, image=bg, anchor="nw")
+        self.back = Label(root, image=bg)
+        self.back.pack(padx=0, pady=0)
 
 #OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
