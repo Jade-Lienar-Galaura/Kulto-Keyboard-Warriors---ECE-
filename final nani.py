@@ -13,29 +13,27 @@ count = 0
 
 class stopwatch():
 
-#LABOS - START/STOP FUNCTION
-        def reset(self):
-            global count
-            count = 1
-            #set the watch to '00:00:00' 
-            self.t.set('00:00:00')
+    #LABOS - START/STOP FUNCTION
+    def reset(self):
+                global count
+                count = 1
+                #set the watch to '00:00:00' 
+                self.t.set('00:00:00')
 
-        def start(self):
-            global count
-            if count == 1:
+    def start(self):
+                global count
                 count = 0
                 self.timer()
             else:
                 count = 1
                 self.timer()
 
-        def stop(self):
+    def stop(self):
                 global count
                 count = 1
 
-#JADE - CLOSE / HALF SA TIMER
-
-def timer(self):
+    #JADE - CLOSE / HALF SA TIMER
+    def timer(self):
         global count
         if (count == 0):
             self.d = str(self.t.get())
@@ -68,11 +66,19 @@ def timer(self):
             self.t.set(self.d)
             if (count == 0):
                 self.root.after(1000, self.timer)
+
           
 
-#CLYDE - HALF SA TIMER / LAP'
+    #CLYDE - HALF SA TIMER / LAP'
 
-def image_path(self):
+    
+
+
+
+
+
+    #Sam - parts custom bg
+    def image_path(self):
         photoloc = filedialog.askopenfilename()
         img = Image.open(photoloc)
         resize =img.resize((1280, 720), Image.ANTIALIAS)
@@ -81,9 +87,14 @@ def image_path(self):
         self.back = Label(root, image=bg)
         self.back.pack(padx=0, pady=0)
 
-#OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
 
-def __init__(self):
+
+
+
+
+    #OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
+
+    def __init__(self):
         self.root = Tk()
         self.canvas = Canvas(self.root, width=680, height=300)
         self.canvas.pack(fill="both", expand=True)
