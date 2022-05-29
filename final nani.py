@@ -12,6 +12,20 @@ count = 0
 class stopwatch():
 
 #LABOS - START/STOP FUNCTION
+        def reset(self):
+                global count
+                count = 1
+                #set the watch to '00:00:00' 
+                self.t.set('00:00:00')
+
+        def start(self):
+                global count
+                count = 0
+                self.timer
+
+        def stop(self):
+                global count
+                count = 1
 
 #JADE - CLOSE / HALF SA TIMER
 
