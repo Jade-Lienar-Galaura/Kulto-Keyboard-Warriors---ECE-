@@ -11,6 +11,15 @@ import time
 global count
 from tkinter import filedialog
 from PIL import ImageTk, Image
+import pygame
+from pygame import mixer
+
+pygame.init()
+
+#mixer.music.load() - SONG HERE !!!!!!!!!!!!!!!!!
+mixer.music.set_volume(1)
+mixer.music.play(-1)
+
 count = 0
 
 class stopwatch():
