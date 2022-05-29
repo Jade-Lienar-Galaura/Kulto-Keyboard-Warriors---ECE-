@@ -16,22 +16,22 @@ class stopwatch():
 
     #LABOS - START/STOP FUNCTION
     def reset(self):
-                global count
-                count = 1
-                #set the watch to '00:00:00' 
-                self.t.set('00:00:00')
+        global count
+        count = 1
+        #set the watch to '00:00:00' 
+        self.t.set('00:00:00')
 
     def start(self):
-                global count
-                count = 0
-                self.timer()
+        global count
+        count = 0
+        self.timer()
                 #else:
                 #count = 1
                 #self.timer()
 
     def stop(self):
-                global count
-                count = 1
+        global count
+        count = 1
 
     def close(self):
         self.root.destroy()
@@ -74,22 +74,8 @@ class stopwatch():
           
 
     #CLYDE - HALF SA TIMER / LAP'
-    def lap(self):
-        h, m, s = map(int, self.d.split(":"))
-        h = str(h).zfill(2)
-        m = str(m).zfill(2)
-        s = str(s).zfill(2)
-        lp = (f"{h}:{m}:{s}")
-        self.lbl = StringVar()
-        self.lbl.set(f"{lp}")
-        self.lapbox.insert(END, (f"{h}:{m}:{s}"))
-        self.lapbox.yview_moveto(1)
     
-
-
-
-
-
+    
     #Sam - parts custom bg
     def image_path(self):
         photoloc = filedialog.askopenfilename()
@@ -99,10 +85,6 @@ class stopwatch():
         self.canvas.create_image(0, 0, image=bg, anchor="nw")
         self.back = Label(root, image=bg)
         self.back.pack(padx=0, pady=0)
-
-
-
-
 
 
     #OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
@@ -151,6 +133,5 @@ class stopwatch():
         #self.label = Label(self.root, text="", font=("Times 40 bold"))
 
         self.root.mainloop()
-
 
 a = stopwatch()
