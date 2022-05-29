@@ -82,7 +82,7 @@ class stopwatch():
         lp = (f"{h}:{m}:{s}")
         self.lbl = StringVar()
         self.lbl.set(f"{lp}")
-        self.lapbox.insert(END, (f"{h}:{m}:{s}"), 0,0)
+        self.lapbox.insert(END, (f"{h}:{m}:{s}"))
         self.lapbox.yview_moveto(1)
     
 
