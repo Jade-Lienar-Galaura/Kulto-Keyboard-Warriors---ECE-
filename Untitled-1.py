@@ -4,6 +4,9 @@
 # i am in - omar
 # i'm in - calvin
 # Wassup mga idols - Sam edgys
+#Here! - Calvin
+#lamaw
+# gay
 import imp
 from tkinter import *
 import sys
