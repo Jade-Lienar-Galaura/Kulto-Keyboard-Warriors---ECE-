@@ -14,7 +14,9 @@ from PIL import ImageTk, Image
 import pygame
 from pygame import mixer
 
+
 pygame.init()
+
 
 #mixer.music.load() - SONG HERE !!!!!!!!!!!!!!!!!
 #Jade: i will upload na the music 
