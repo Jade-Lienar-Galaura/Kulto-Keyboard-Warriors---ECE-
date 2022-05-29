@@ -34,7 +34,7 @@ class stopwatch():
 
 #JADE - CLOSE / HALF SA TIMER
 
-  def timer(self):
+def timer(self):
         global count
         if (count == 0):
             self.d = str(self.t.get())
@@ -67,6 +67,7 @@ class stopwatch():
             self.t.set(self.d)
             if (count == 0):
                 self.root.after(1000, self.timer)
+          
 
 #CLYDE - HALF SA TIMER / LAP'
 
