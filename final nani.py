@@ -14,15 +14,19 @@ class stopwatch():
 
 #LABOS - START/STOP FUNCTION
         def reset(self):
-                global count
-                count = 1
-                #set the watch to '00:00:00' 
-                self.t.set('00:00:00')
+            global count
+            count = 1
+            #set the watch to '00:00:00' 
+            self.t.set('00:00:00')
 
         def start(self):
-                global count
+            global count
+            if count == 1:
                 count = 0
-                self.timer
+                self.timer()
+            else:
+                count = 1
+                self.timer()
 
         def stop(self):
                 global count
