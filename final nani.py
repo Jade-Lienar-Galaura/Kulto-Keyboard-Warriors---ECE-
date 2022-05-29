@@ -1,4 +1,21 @@
-def timer(self):
+#Sam was here
+#Jade was here
+import imp
+from tkinter import *
+import sys
+import time
+global count
+from tkinter import filedialog
+from PIL import ImageTk, Image
+count = 0
+
+class stopwatch():
+
+#LABOS - START/STOP FUNCTION
+
+#JADE - CLOSE / HALF SA TIMER
+
+    def timer(self):
         global count
         if (count == 0):
             self.d = str(self.t.get())
@@ -31,3 +48,15 @@ def timer(self):
             self.t.set(self.d)
             if (count == 0):
                 self.root.after(1000, self.timer)
+#CLYDE - HALF SA TIMER / LAP'
+
+def image_path(self):
+        photoloc = filedialog.askopenfilename()
+        img = Image.open(photoloc)
+        resize =img.resize((1280, 720), Image.ANTIALIAS)
+        bg = ImageTk.PhotoImage(resize)
+        self.canvas.create_image(0, 0, image=bg, anchor="nw")
+        self.back = Label(root, image=bg)
+        self.back.pack(padx=0, pady=0)
+
+#OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
