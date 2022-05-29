@@ -2,6 +2,7 @@
 #Jade was here
 #Grezel was here
 #Omar was here
+# Thanks for the cooperation guys! Really appreciate na ginawa niyo ang parts niyo agad <3 much loves! - Sam
 import imp
 from tkinter import *
 import sys
@@ -130,13 +131,7 @@ class stopwatch():
         self.bt5 = Button(self.root, image = self.img5, command=self.lap)
         self.bt6 = Button(self.root, image = self.img6, command=self.image_path)
 
-        button1_window = self.canvas.create_window(630, 150, anchor="nw", window=self.bt1)
-        button2_window = self.canvas.create_window(730, 150, anchor="nw", window=self.bt2)
-        button3_window = self.canvas.create_window(830, 150, anchor="nw", window=self.bt3)
-        button4_window = self.canvas.create_window(930, 150, anchor="nw", window=self.bt4)
-        button5_window = self.canvas.create_window(1030, 150, anchor="nw", window=self.bt5)
-        button6_window = self.canvas.create_window(1130, 150, anchor="nw", window=self.bt6)
-        buttonlb_window = self.canvas.create_window(960, 20, window=self.lb)
+    
 
         self.scrollbar = Scrollbar(self.root, orient=VERTICAL)
         self.lapbox = Listbox(self.root,selectmode=EXTENDED, height = 5,
