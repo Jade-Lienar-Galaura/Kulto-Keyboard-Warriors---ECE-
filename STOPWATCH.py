@@ -20,7 +20,7 @@ pygame.init()
 
 #mixer.music.load() - SONG HERE !!!!!!!!!!!!!!!!!
 #Jade: i will upload na the music 
-mixer.music.load('Avicii - Broken Arrows (Instrumental).mp3')
+mixer.music.load('Avicii - Broken Arrows (Instrumental).wav')
 mixer.music.set_volume(1)
 mixer.music.play(-1)
 
