@@ -29,7 +29,7 @@ class stopwatch():
                 global count
                 count = 1
 
-#JADE - CLOSE / HALF SA TIMER
+    #JADE - CLOSE / HALF SA TIMER
     def timer(self):
         global count
         if (count == 0):
@@ -66,7 +66,7 @@ class stopwatch():
 
           
 
-#CLYDE - HALF SA TIMER / LAP'
+    #CLYDE - HALF SA TIMER / LAP'
 
     
 
@@ -74,7 +74,7 @@ class stopwatch():
 
 
 
-#Sam - parts custom bg
+    #Sam - parts custom bg
     def image_path(self):
         photoloc = filedialog.askopenfilename()
         img = Image.open(photoloc)
@@ -89,7 +89,7 @@ class stopwatch():
 
 
 
-#OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
+    #OMAR - BUTTONS/ REST OF INNIT ASIDE FROM BUTTON WINDOWS
 
     def __init__(self):
         self.root = Tk()
