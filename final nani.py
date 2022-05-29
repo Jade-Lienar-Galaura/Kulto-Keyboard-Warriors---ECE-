@@ -23,7 +23,10 @@ class stopwatch():
     def start(self):
                 global count
                 count = 0
-                self.timer
+                self.timer()
+            else:
+                count = 1
+                self.timer()
 
     def stop(self):
                 global count
