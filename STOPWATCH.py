@@ -1,8 +1,8 @@
 #Sam was here
 #Jade was here
-#Grezel was here
 #Omar was here
 #Calvin was here
+#Grezel was here
 # Thanks for the cooperation guys! Really appreciate na ginawa niyo ang parts niyo agad <3 much loves! - Sam
 import imp
 from tkinter import *
@@ -27,7 +27,6 @@ mixer.music.play(-1)
 count = 0
 
 class stopwatch():
-
     #LABOS - START/STOP FUNCTION
     def reset(self):
         global count
@@ -49,6 +48,7 @@ class stopwatch():
 
     def close(self):
         self.root.destroy()
+
 
     #JADE - CLOSE / HALF SA TIMER
     def timer(self):
