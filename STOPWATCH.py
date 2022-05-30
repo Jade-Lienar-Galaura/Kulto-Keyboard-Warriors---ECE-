@@ -1,6 +1,5 @@
 #Sam was here
 #Jade was here
-#Grezel was here
 #Omar was here
 #Calvin was here
 # Thanks for the cooperation guys! Really appreciate na ginawa niyo ang parts niyo agad <3 much loves! - Sam
@@ -27,29 +26,6 @@ mixer.music.play(-1)
 count = 0
 
 class stopwatch():
-
-    #LABOS - START/STOP FUNCTION
-    def reset(self):
-        global count
-        count = 1
-        #set the watch to '00:00:00' 
-        self.t.set('00:00:00')
-
-    def start(self):
-        global count
-        count = 0
-        self.timer()
-                #else:
-                #count = 1
-                #self.timer()
-
-    def stop(self):
-        global count
-        count = 1
-
-    def close(self):
-        self.root.destroy()
-
     #JADE - CLOSE / HALF SA TIMER
     def timer(self):
         global count
