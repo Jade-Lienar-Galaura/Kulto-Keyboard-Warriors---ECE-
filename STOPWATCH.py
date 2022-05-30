@@ -1,7 +1,7 @@
 #Sam was here
 #Jade was here
 #Omar was here
-#Calvin was here
+
 #Grezel was here
 # Thanks for the cooperation guys! Really appreciate na ginawa niyo ang parts niyo agad <3 much loves! - Sam
 import imp
@@ -88,16 +88,7 @@ class stopwatch():
           
 
     #CLYDE - HALF SA TIMER / LAP'
-    def lap(self):
-        h, m, s = map(int, self.d.split(":"))
-        h = str(h).zfill(2)
-        m = str(m).zfill(2)
-        s = str(s).zfill(2)
-        lp = (f"{h}:{m}:{s}")
-        self.lbl = StringVar()
-        self.lbl.set(f"{lp}")
-        self.lapbox.insert(END, (f"{h}:{m}:{s}"))
-        self.lapbox.yview_moveto(1)
+
     
     
     #Sam - parts custom bg
